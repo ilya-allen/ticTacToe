@@ -9,7 +9,7 @@ col.forEach(function(curVal) {
         cross = !cross;
 
         if (cross) {
-            curVal.style.backgroundImage = 'url("crossgit.png")';
+            curVal.style.backgroundImage = 'url("cross.png")';
         } else {
             curVal.style.backgroundImage = 'url("circle.png")';
         }
