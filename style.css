@@ -56,7 +56,13 @@ body {
     box-shadow: 2px 2px 2px black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    
+    cursor: pointer;
+}
+
+.title_buttons:hover {
+    box-shadow: none;
+    transform: translateX(2px) translateY(2px);
+    transition: 200ms ease-in-out;
 }
 
 .row_buttons {
@@ -87,8 +93,22 @@ body {
     font-weight: 800;
     font-family: Georgia, 'Times New Roman', Times, serif;
     box-shadow: 2px 2px 2px black;
+    cursor: pointer;
 }
 
+.reset_button:hover {
+    box-shadow: none;
+    transform: translateX(2px) translateY(2px);
+    transition: 200ms ease-in-out;
+}
+
+.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    box-shadow: none;
+    cursor: not-allowed;
+
+}
 
 
 
