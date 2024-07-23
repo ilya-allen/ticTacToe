@@ -51,3 +51,5 @@ crossStart.addEventListener('click', function() {
     })
     resetButton.classList.remove('disabled')
 })
+
+// kata today
