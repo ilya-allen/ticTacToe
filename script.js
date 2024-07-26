@@ -5,7 +5,7 @@ const resetButton = document.querySelector('.reset_button');
 const circleStart = document.querySelector('#circle_add');
 const crossStart = document.querySelector('#cross_add');
 const titleButtons = document.querySelectorAll('.title_buttons')
-
+const popupBox = document.querySelector('.popup_back')
 
 let ready = false;
 let cross = false;
@@ -22,6 +22,10 @@ col.forEach(function(curVal) {
 
     })
 })
+
+function removeNote() {
+    popupBox.remove();
+}
 
 resetButton.addEventListener('click', function() {
     ready = false;
