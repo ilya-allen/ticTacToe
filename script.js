@@ -7,6 +7,10 @@ const crossStart = document.querySelector('#cross_add');
 const titleButtons = document.querySelectorAll('.title_buttons')
 const popupBox = document.querySelector('.popup_back')
 
+let finalObj = {
+
+}
+
 let ready = false;
 let cross = false;
 col.forEach(function(curVal) {
@@ -14,8 +18,36 @@ col.forEach(function(curVal) {
         if(curVal.style.backgroundImage == '' && ready == true) {
             if (cross) {
                 curVal.style.backgroundImage = 'url("cross.png")';
+                if(Object.hasOwn(finalObj, `${curVal.classList[1]}_cross`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_cross`)) {
+                    finalObj[`${curVal.classList[1]}_cross`] += 1;
+                    finalObj[`${curVal.classList[2]}_cross`] += 1;
+                } else if (!Object.hasOwn(finalObj, `${curVal.classList[1]}_cross`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_cross`)) {
+                    finalObj[`${curVal.classList[1]}_cross`] = 1;
+                    finalObj[`${curVal.classList[2]}_cross`] += 1;
+                } else if (Object.hasOwn(finalObj, `${curVal.classList[1]}_cross`) && !Object.hasOwn(finalObj, `${curVal.classList[2]}_cross`)) {
+                    finalObj[`${curVal.classList[1]}_cross`] += 1;
+                    finalObj[`${curVal.classList[2]}_cross`] = 1;
+                } else {
+                    finalObj[`${curVal.classList[1]}_cross`] = 1;
+                    finalObj[`${curVal.classList[2]}_cross`] = 1;
+                }
+
             } else {
                 curVal.style.backgroundImage = 'url("circle.png")';
+                if(Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
+                    finalObj[`${curVal.classList[1]}_circle`] += 1;
+                    finalObj[`${curVal.classList[2]}_circle`] += 1;
+                } else if (!Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
+                    finalObj[`${curVal.classList[1]}_circle`] = 1;
+                    finalObj[`${curVal.classList[2]}_circle`] += 1;
+                } else if (!Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
+                    finalObj[`${curVal.classList[1]}_circle`] += 1;
+                    finalObj[`${curVal.classList[2]}_circle`] = 1;
+                } else {
+                    finalObj[`${curVal.classList[1]}_cross`] = 1;
+                    finalObj[`${curVal.classList[2]}_cross`] = 1;
+                }
+                
             }
             cross = !cross;
         }
