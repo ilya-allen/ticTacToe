@@ -16,7 +16,7 @@ let cross = false;
 col.forEach(function(curVal) {
     curVal.addEventListener('click', function(e) {
         if(curVal.style.backgroundImage == '' && ready == true) {
-            if (cross) {
+            if (cross == true) {
                 curVal.style.backgroundImage = 'url("cross.png")';
                 if(Object.hasOwn(finalObj, `${curVal.classList[1]}_cross`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_cross`)) {
                     finalObj[`${curVal.classList[1]}_cross`] += 1;
@@ -31,8 +31,9 @@ col.forEach(function(curVal) {
                     finalObj[`${curVal.classList[1]}_cross`] = 1;
                     finalObj[`${curVal.classList[2]}_cross`] = 1;
                 }
+                console.log(finalObj)
 
-            } else {
+            } else if(cross == false) {
                 curVal.style.backgroundImage = 'url("circle.png")';
                 if(Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
                     finalObj[`${curVal.classList[1]}_circle`] += 1;
@@ -40,16 +41,23 @@ col.forEach(function(curVal) {
                 } else if (!Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
                     finalObj[`${curVal.classList[1]}_circle`] = 1;
                     finalObj[`${curVal.classList[2]}_circle`] += 1;
-                } else if (!Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
+                } else if (Object.hasOwn(finalObj, `${curVal.classList[1]}_circle`) && !Object.hasOwn(finalObj, `${curVal.classList[2]}_circle`)) {
                     finalObj[`${curVal.classList[1]}_circle`] += 1;
                     finalObj[`${curVal.classList[2]}_circle`] = 1;
                 } else {
-                    finalObj[`${curVal.classList[1]}_cross`] = 1;
-                    finalObj[`${curVal.classList[2]}_cross`] = 1;
+                    finalObj[`${curVal.classList[1]}_circle`] = 1;
+                    finalObj[`${curVal.classList[2]}_circle`] = 1;
                 }
-                
+                console.log(finalObj)
             }
             cross = !cross;
+            console.log(cross)
+            for(const property in finalObj) {
+                if(finalObj[property] > 2) {
+                    alert(property)
+                }
+            }
+            
         }
 
     })
@@ -61,6 +69,7 @@ function removeNote() {
 
 resetButton.addEventListener('click', function() {
     ready = false;
+    finalObj = {};
     col.forEach(function(curVal) {
         curVal.style.backgroundImage = ''
     })
