@@ -11,6 +11,8 @@ let finalObj = {
 
 }
 
+// tough day today
+
 let ready = false;
 let cross = false;
 col.forEach(function(curVal) {
