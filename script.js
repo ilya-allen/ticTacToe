@@ -6,6 +6,7 @@ const circleStart = document.querySelector('#circle_add');
 const crossStart = document.querySelector('#cross_add');
 const titleButtons = document.querySelectorAll('.title_buttons')
 const popupBox = document.querySelector('.popup_back')
+const mainBody = document.querySelector('.main_body')
 
 let finalObj = {
 
@@ -56,7 +57,7 @@ col.forEach(function(curVal) {
             console.log(cross)
             for(const property in finalObj) {
                 if(finalObj[property] > 2) {
-                    alert(property)
+                    winnerPopup(property)
                 }
             }
             
@@ -64,6 +65,26 @@ col.forEach(function(curVal) {
 
     })
 })
+
+function winnerPopup(winner) {
+    console.log(winner)
+    let realWinner = winner.slice(winner.length - 3)
+
+    if(realWinner == 'cle') {
+        realWinner = 'Circles'
+    } else {
+        realWinner = 'Crosses'
+    }
+    console.log(realWinner)
+    const markup = `
+    <div class="popup_back">
+      <div class="popup">
+        <h1 class="popup_title">Congratulations ${realWinner}</h1>
+        <button class="popup_button" onclick="removeNote()">Understood!</button>
+      </div>
+    </div>`
+    mainBody.insertAdjacentHTML('afterbegin', markup)
+}
 
 function removeNote() {
     popupBox.remove();
