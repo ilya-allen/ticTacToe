@@ -7,6 +7,7 @@ const crossStart = document.querySelector('#cross_add');
 const titleButtons = document.querySelectorAll('.title_buttons')
 const popupBox = document.querySelector('.popup_back')
 const mainBody = document.querySelector('.main_body')
+const popupButton = document.querySelector('.popup_button')
 
 let finalObj = {
 
@@ -60,11 +61,29 @@ col.forEach(function(curVal) {
                     winnerPopup(property)
                 }
             }
+
+            if(diagonalCheck() == 1) {
+                winnerPopup('circle')
+            }
+
+            if(diagonalCheck() == 2) {
+                winnerPopup('cross')
+            }
             
         }
 
     })
 })
+
+function diagonalCheck() {
+    if(Object.hasOwn(finalObj, 'second_row_circle') && Object.hasOwn(finalObj, 'second_col_circle') && Object.hasOwn(finalObj, 'first_row_circle') && Object.hasOwn(finalObj, 'first_col_circle') && Object.hasOwn(finalObj, 'first_col_circle') && Object.hasOwn(finalObj, 'third_col_circle') && Object.hasOwn(finalObj, 'third_row_circle')) {
+        return 1
+    } else if (Object.hasOwn(finalObj, 'second_row_cross') && Object.hasOwn(finalObj, 'second_col_cross') && Object.hasOwn(finalObj, 'first_row_cross') && Object.hasOwn(finalObj, 'first_col_cross') && Object.hasOwn(finalObj, 'first_col_cross') && Object.hasOwn(finalObj, 'third_col_cross') && Object.hasOwn(finalObj, 'third_row_cross')) {
+        return 2
+    } else {
+        return 3
+    }
+}
 
 function winnerPopup(winner) {
     console.log(winner)
@@ -84,6 +103,14 @@ function winnerPopup(winner) {
       </div>
     </div>`
     mainBody.insertAdjacentHTML('afterbegin', markup)
+    callEvent();
+}
+
+function callEvent() {
+    const popupBox = document.querySelector('.popup_back')
+    document.querySelector('.popup_button').addEventListener('click', function() {
+        popupBox.remove();
+    })
 }
 
 function removeNote() {
