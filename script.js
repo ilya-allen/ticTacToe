@@ -74,7 +74,7 @@ col.forEach(function(curVal) {
 
     })
 })
-
+// long ass day on tic tac toe
 function diagonalCheck() {
     if(Object.hasOwn(finalObj, 'second_row_circle') && Object.hasOwn(finalObj, 'second_col_circle') && Object.hasOwn(finalObj, 'first_row_circle') && Object.hasOwn(finalObj, 'first_col_circle') && Object.hasOwn(finalObj, 'first_col_circle') && Object.hasOwn(finalObj, 'third_col_circle') && Object.hasOwn(finalObj, 'third_row_circle')) {
         return 1
