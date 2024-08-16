@@ -129,6 +129,8 @@ body {
     border-radius: 5px;
     box-shadow: 2px 2px 2px black;
     margin-left: 39%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .popup_title {
@@ -136,10 +138,10 @@ body {
     font-size: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 800;
-    margin-bottom: 20px;
 }
 
 .popup_text {
+    margin-top: 20px;
     margin-left: 10px;
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -158,5 +160,23 @@ body {
     cursor: pointer;
 }
 
+.winner_box {
+    height: 400px;
+    background-color: rgb(153, 218, 137);
+}
 
+.winner {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
 
+.button_winner {
+    margin-top: 20px;
+}
+
+.img_popup {
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+}

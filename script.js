@@ -97,9 +97,10 @@ function winnerPopup(winner) {
     console.log(realWinner)
     const markup = `
     <div class="popup_back">
-      <div class="popup">
-        <h1 class="popup_title">Congratulations ${realWinner}</h1>
-        <button class="popup_button" onclick="removeNote()">Understood!</button>
+      <div class="popup winner_box">
+        <h1 class="popup_title winner">Congratulations ${realWinner}</h1>
+        <img class="img_popup" src="${realWinner}.png">
+        <button class="popup_button button_winner" onclick="removeNote()">Understood!</button>
       </div>
     </div>`
     mainBody.insertAdjacentHTML('afterbegin', markup)
