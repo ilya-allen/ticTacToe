@@ -148,16 +148,17 @@ body {
 }
 
 .popup_button {
-    width: 25%;
-    height: 30px;
+    width: 50%;
+    height: 50px;
     margin-top: 300px;
-    margin-left: 35%;
+    margin-left: 25%;
     background-color: rgb(99, 0, 102);
     border: none;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10px;
+    font-size: 20px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .winner_box {
