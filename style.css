@@ -52,7 +52,7 @@ body {
     display: block;
     width: 90%;
     height: 40px;
-    background-color: aqua;
+    background-color: rgb(91, 192, 61);
     border: none;
     box-shadow: 2px 2px 2px black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -125,7 +125,7 @@ body {
     position: relative;
     width: 400px;
     height: 600px;
-    background-color: bisque;
+    background-color: rgb(131, 182, 107);
     border-radius: 5px;
     box-shadow: 2px 2px 2px black;
     margin-left: 39%;
@@ -152,7 +152,7 @@ body {
     height: 50px;
     margin-top: 300px;
     margin-left: 25%;
-    background-color: rgb(99, 0, 102);
+    background-color: rgb(109, 11, 11);
     border: none;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
