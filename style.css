@@ -181,3 +181,53 @@ body {
     height: 200px;
     margin-left: 100px;
 }
+
+@media screen and (max-width: 1000px) {
+    .game_container {
+        height: 400px;
+        width: 400px;
+        margin-left: 31%;
+    }
+
+    .col {
+        width: 32.7%;
+        height: 100%;
+    }
+
+
+    .reset_button {
+        margin-left: 40%;
+    }
+
+    .row_buttons {
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game_container {
+        height: 300px;
+        width: 300px;
+        margin-left: 31%;
+    }
+
+    .col {
+        width: 32.4%;
+        height: 100%;
+    }
+
+
+    .reset_button {
+        margin-left: 35%;
+    }
+
+    .row_buttons {
+        margin-left: 30%;
+    }
+
+    .title_buttons {
+        width: 70%;
+        height: 30px;
+        font-size: 15px;
+    }
+}
