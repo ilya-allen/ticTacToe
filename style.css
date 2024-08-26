@@ -162,6 +162,7 @@ body {
 }
 
 .winner_box {
+    margin-top: 200px;
     height: 400px;
     background-color: rgb(153, 218, 137);
 }
@@ -202,6 +203,24 @@ body {
     .row_buttons {
         margin-left: 30%;
     }
+
+
+    .img_popup {
+        margin-top: 50px;
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+    }
+
+    .popup_title {
+        margin-left: 10px;
+        font-size: 25px;
+    }
+    .winner_box {
+        width: 300px;
+        height: 300px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -222,12 +241,11 @@ body {
     }
 
     .row_buttons {
-        margin-left: 30%;
+        margin-left: 28%;
     }
 
     .title_buttons {
-        width: 70%;
         height: 30px;
-        font-size: 15px;
+        font-size: 18px;
     }
 }
