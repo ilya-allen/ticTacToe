@@ -61,7 +61,10 @@ col.forEach(function(curVal) {
                     finalObj[`${curVal.classList[1]}_cross`] = 1;
                     finalObj[`${curVal.classList[2]}_cross`] = 1;
                 }
-                console.log(finalObj)
+                
+                if(curVal.classList.contains('diagonal') || curVal.classList.contains('diagonal1') || curVal.classList.contains('diagonal2')) {
+                    curVal.classList.add('cross')
+                }
 
             } else if(cross == false) {
                 curVal.style.backgroundImage = 'url("circle.png")';
@@ -78,10 +81,14 @@ col.forEach(function(curVal) {
                     finalObj[`${curVal.classList[1]}_circle`] = 1;
                     finalObj[`${curVal.classList[2]}_circle`] = 1;
                 }
-                console.log(finalObj)
+                
+                if(curVal.classList.contains('diagonal') || curVal.classList.contains('diagonal1') || curVal.classList.contains('diagonal2')) {
+                    console.log('test', curVal)
+                    curVal.classList.add('circle')
+                }
             }
             cross = !cross;
-            console.log(cross)
+            console.log(col)
             for(const property in finalObj) {
                 if(finalObj[property] > 2) {
                     winnerPopup(property)
@@ -102,12 +109,19 @@ col.forEach(function(curVal) {
 })
 // long ass day on tic tac toe
 function diagonalCheck() {
-    if(Object.hasOwn(finalObj, 'second_row_circle') && Object.hasOwn(finalObj, 'second_col_circle') && Object.hasOwn(finalObj, 'first_row_circle') && Object.hasOwn(finalObj, 'first_col_circle') && Object.hasOwn(finalObj, 'first_col_circle') && Object.hasOwn(finalObj, 'third_col_circle') && Object.hasOwn(finalObj, 'third_row_circle')) {
-        return 1
-    } else if (Object.hasOwn(finalObj, 'second_row_cross') && Object.hasOwn(finalObj, 'second_col_cross') && Object.hasOwn(finalObj, 'first_row_cross') && Object.hasOwn(finalObj, 'first_col_cross') && Object.hasOwn(finalObj, 'first_col_cross') && Object.hasOwn(finalObj, 'third_col_cross') && Object.hasOwn(finalObj, 'third_row_cross')) {
-        return 2
-    } else {
-        return 3
+    let arrCheck = []
+    col.forEach(function(curVal) {
+        if (curVal.classList.contains('diagonal1')) {
+            if(curVal.classList.contains('cross')) {
+                arrCheck.push('yes')
+                console.log('yes')
+            }
+            
+        }
+
+    })
+    if(arrCheck.length == 2) {
+        console.log('yur')
     }
 }
 
