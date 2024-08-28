@@ -95,13 +95,7 @@ col.forEach(function(curVal) {
                 }
             }
 
-            if(diagonalCheck() == 1) {
-                winnerPopup('circle')
-            }
-
-            if(diagonalCheck() == 2) {
-                winnerPopup('cross')
-            }
+            diagonalCheck();
             
         }
 
@@ -109,19 +103,25 @@ col.forEach(function(curVal) {
 })
 // long ass day on tic tac toe
 function diagonalCheck() {
-    let arrCheck = []
-    col.forEach(function(curVal) {
-        if (curVal.classList.contains('diagonal1')) {
-            if(curVal.classList.contains('cross')) {
-                arrCheck.push('yes')
-                console.log('yes')
+    for(let i = 0; i !== 2; i ++) {
+        let arrCheck = []
+        col.forEach(function(curVal) {
+            if (curVal.classList.contains('diagonal1')) {
+                if(curVal.classList.contains('cross')) {
+                    arrCheck.push('yes')
+                    console.log('yes')
+                }
+                
             }
-            
+    
+        })
+        if(arrCheck.length == 2) {
+            col.forEach(function(curVal) {
+                if(curVal.classList.contains('diagonal')) {
+    
+                }
+            })
         }
-
-    })
-    if(arrCheck.length == 2) {
-        console.log('yur')
     }
 }
 
@@ -163,11 +163,19 @@ resetButton.addEventListener('click', function() {
     finalObj = {};
     col.forEach(function(curVal) {
         curVal.style.backgroundImage = ''
+        if(curVal.classList.contains('cross')) {
+            curVal.classList.remove('cross')
+        } 
+
+        if(curVal.classList.contains('circle')) {
+            curVal.classList.remove('circle')
+        } 
     })
     resetButton.classList.add('disabled')
     titleButtons.forEach(function(curVal) {
         curVal.classList.remove('disabled')
     })
+
 })
 
 circleStart.addEventListener('click', function() {
