@@ -62,7 +62,7 @@ col.forEach(function(curVal) {
                     finalObj[`${curVal.classList[2]}_cross`] = 1;
                 }
                 
-                if(curVal.classList.contains('diagonal') || curVal.classList.contains('diagonal1') || curVal.classList.contains('diagonal2')) {
+                if(curVal.classList.contains('diagonal') || curVal.classList.contains('diagonal0') || curVal.classList.contains('diagonal1')) {
                     curVal.classList.add('cross')
                 }
 
@@ -82,8 +82,7 @@ col.forEach(function(curVal) {
                     finalObj[`${curVal.classList[2]}_circle`] = 1;
                 }
                 
-                if(curVal.classList.contains('diagonal') || curVal.classList.contains('diagonal1') || curVal.classList.contains('diagonal2')) {
-                    console.log('test', curVal)
+                if(curVal.classList.contains('diagonal') || curVal.classList.contains('diagonal0') || curVal.classList.contains('diagonal1')) {
                     curVal.classList.add('circle')
                 }
             }
@@ -103,22 +102,26 @@ col.forEach(function(curVal) {
 })
 // long ass day on tic tac toe
 function diagonalCheck() {
+    let classChecker = ['cross', 'circle']
     for(let i = 0; i !== 2; i ++) {
         let arrCheck = []
         col.forEach(function(curVal) {
-            if (curVal.classList.contains('diagonal1')) {
-                if(curVal.classList.contains('cross')) {
-                    arrCheck.push('yes')
+            if (curVal.classList.contains(`diagonal${i}`)) {
+                if(curVal.classList.contains('cross') || curVal.classList.contains('circle')) {
+                    console.log('diagona')
+                    arrCheck.push(curVal.classList[4])
                     console.log('yes')
                 }
                 
             }
     
         })
-        if(arrCheck.length == 2) {
+        if(arrCheck.length == 2 && arrCheck[0] == arrCheck[1]) {
             col.forEach(function(curVal) {
                 if(curVal.classList.contains('diagonal')) {
-    
+                    if(curVal.classList[4] !== undefined && curVal.classList[4] == arrCheck[1]) {
+                        console.log('YESSSSSSSSSSSS')
+                    }
                 }
             })
         }
