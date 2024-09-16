@@ -120,7 +120,7 @@ function diagonalCheck() {
             col.forEach(function(curVal) {
                 if(curVal.classList.contains('diagonal')) {
                     if(curVal.classList[4] !== undefined && curVal.classList[4] == arrCheck[1]) {
-                        console.log('YESSSSSSSSSSSS')
+                        winnerPopup(arrCheck[1])
                     }
                 }
             })
