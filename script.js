@@ -128,6 +128,8 @@ function diagonalCheck() {
     }
 }
 
+// exams today soz
+
 function winnerPopup(winner) {
     console.log(winner)
     let realWinner = winner.slice(winner.length - 3)
