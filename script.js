@@ -99,7 +99,7 @@ col.forEach(function(curVal) {
             diagonalCheck();
 
             if(countCheck == 0) {
-                console.log('tie')
+                drawPopup();
             }
             
         }
@@ -152,6 +152,18 @@ function winnerPopup(winner) {
         <h1 class="popup_title winner">Congratulations ${realWinner}</h1>
         <img class="img_popup" src="${realWinner}.png">
         <button class="popup_button button_winner" onclick="removeNote()">Understood!</button>
+      </div>
+    </div>`
+    mainBody.insertAdjacentHTML('afterbegin', markup)
+    callEvent();
+}
+
+function drawPopup() {
+    const markup = `
+    <div class="popup_back">
+      <div class="popup winner_box">
+        <h1 class="draw_popup_title">Both Players Tied!!</h1>
+        <button class="popup_button draw_button" onclick="removeNote()">Understood!</button>
       </div>
     </div>`
     mainBody.insertAdjacentHTML('afterbegin', markup)
