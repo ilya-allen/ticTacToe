@@ -94,13 +94,16 @@ col.forEach(function(curVal) {
             for(const property in finalObj) {
                 if(finalObj[property] > 2) {
                     winnerPopup(property)
-                }
+                    countCheck = 9;
+                } 
             }
-            diagonalCheck();
 
             if(countCheck == 0) {
                 drawPopup();
             }
+            diagonalCheck();
+
+            
             
         }
 
@@ -159,14 +162,14 @@ function winnerPopup(winner) {
 }
 
 function drawPopup() {
-    const markup = `
+    const drawMark = `
     <div class="popup_back">
       <div class="popup winner_box">
         <h1 class="draw_popup_title">Both Players Tied!!</h1>
         <button class="popup_button draw_button" onclick="removeNote()">Understood!</button>
       </div>
     </div>`
-    mainBody.insertAdjacentHTML('afterbegin', markup)
+    mainBody.insertAdjacentHTML('afterbegin', drawMark)
     callEvent();
 }
 
