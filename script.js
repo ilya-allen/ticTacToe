@@ -1,11 +1,5 @@
 'use strict';
 
-
-
-
-
-
-
 const col = document.querySelectorAll('.col')
 const resetButton = document.querySelector('.reset_button');
 const circleStart = document.querySelector('#circle_add');
@@ -20,7 +14,6 @@ let finalObj = {
 }
 let countCheck = 9;
 
-// tough day today
 
 let ready = false;
 let cross = false;
@@ -89,7 +82,7 @@ col.forEach(function(curVal) {
 
     })
 })
-// long ass day on tic tac toe
+
 function diagonalCheck() {
     let classChecker = ['cross', 'circle']
     for(let i = 0; i !== 2; i ++) {
@@ -117,7 +110,6 @@ function diagonalCheck() {
     }
 }
 
-// exams today soz
 
 function winnerPopup(winner) {
     console.log(winner)
