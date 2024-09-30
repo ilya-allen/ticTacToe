@@ -9,10 +9,10 @@ const popupBox = document.querySelector('.popup_back')
 const mainBody = document.querySelector('.main_body')
 const popupButton = document.querySelector('.popup_button')
 
+
 let finalObj = {
 
 }
-let countCheck = 9;
 
 
 let ready = false;
@@ -20,6 +20,7 @@ let cross = false;
 col.forEach(function(curVal) {
     curVal.addEventListener('click', function(e) {
         if(curVal.style.backgroundImage == '' && ready == true) {
+            let drawCheck = 0;
             console.log(col)
             if (cross == true) {
                 curVal.style.backgroundImage = 'url("cross.png")';
@@ -61,19 +62,26 @@ col.forEach(function(curVal) {
                     curVal.classList.add('circle')
                 }
             }
-            countCheck--;
             cross = !cross;
             console.log(col)
+            
             for(const property in finalObj) {
-                if(finalObj[property] > 2) {
+                if(finalObj[property] == 3) {
                     winnerPopup(property)
-                    countCheck = 9;
-                } 
+                    drawCheck = 0;
+                } else {
+                    
+                    drawCheck++;
+                    console.log(drawCheck, 'YURRRR')
+                }
             }
+            console.log(drawCheck)
 
-            if(countCheck == 0) {
-                drawPopup();
-            }
+            console.log(finalObj, 'obj')
+            console.log(drawCheck, 'drawCheck')
+
+
+
             diagonalCheck();
 
             
@@ -173,7 +181,6 @@ resetButton.addEventListener('click', function() {
     titleButtons.forEach(function(curVal) {
         curVal.classList.remove('disabled')
     })
-    countCheck = 9;
 
 })
 
