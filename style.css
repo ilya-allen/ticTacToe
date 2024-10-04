@@ -257,6 +257,22 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    .popup {
+        margin-left: 25%;
+        width: 300px;
+        height: 450px;
+    }
+
+    
+
+    .popup_text {
+        font-size: 17px;
+    }
+
+    .popup_button {
+        margin-top: 150px;
+    }
+
     .game_container {
         height: 300px;
         width: 300px;
@@ -275,6 +291,40 @@ body {
 
     .row_buttons {
         margin-left: 28%;
+    }
+
+    .title_buttons {
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title {
+        margin-top: 20px;
+        font-size: 25px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .game_container {
+        height: 300px;
+        width: 300px;
+        margin-left: 20%;
+    }
+
+    .col {
+        width: 32.4%;
+        height: 100%;
+    }
+
+
+    .reset_button {
+        margin-left: 32%;
+    }
+
+    .row_buttons {
+        margin-left: 10%;
     }
 
     .title_buttons {
