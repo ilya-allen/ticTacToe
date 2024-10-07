@@ -8,7 +8,7 @@ const titleButtons = document.querySelectorAll('.title_buttons')
 const popupBox = document.querySelector('.popup_back')
 const mainBody = document.querySelector('.main_body')
 const popupButton = document.querySelector('.popup_button')
-
+let winCount = 9;
 
 let finalObj = {
 
@@ -64,7 +64,7 @@ col.forEach(function(curVal) {
             }
             cross = !cross;
             console.log(col)
-            
+            winCount--;
             for(const property in finalObj) {
                 if(finalObj[property] == 3) {
                     winnerPopup(property)
@@ -84,7 +84,9 @@ col.forEach(function(curVal) {
 
             diagonalCheck();
 
-            
+            if(winCount == 0) {
+                drawPopup();
+            }
             
         }
 
@@ -111,6 +113,7 @@ function diagonalCheck() {
                 if(curVal.classList.contains('diagonal')) {
                     if(curVal.classList[4] !== undefined && curVal.classList[4] == arrCheck[1]) {
                         winnerPopup(arrCheck[1])
+                        winCount = 8;
                     }
                 }
             })
