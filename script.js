@@ -86,6 +86,7 @@ col.forEach(function(curVal) {
 
             if(winCount == 0) {
                 drawPopup();
+                winCount = 9;
             }
             
         }
@@ -168,6 +169,7 @@ function removeNote() {
 }
 
 resetButton.addEventListener('click', function() {
+    winCount = 9;
     ready = false;
     finalObj = {};
     col.forEach(function(curVal) {
