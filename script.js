@@ -1,5 +1,7 @@
 'use strict';
 
+// yur
+
 const col = document.querySelectorAll('.col')
 const resetButton = document.querySelector('.reset_button');
 const circleStart = document.querySelector('#circle_add');
